@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "postgres": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-postgres",
+        "postgresql://postgres:lentechtest@localhost:5432/geo_entities?sslmode=disable"
+      ]
+    }
+  }
+}
