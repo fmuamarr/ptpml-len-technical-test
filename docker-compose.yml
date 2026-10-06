@@ -38,6 +38,21 @@ services:
       postgres:
         condition: service_healthy
 
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      args:
+        VITE_API_BASE_URL: ""
+    container_name: web_len_tech_test_muamar
+    restart: unless-stopped
+    ports:
+      - "3000:80"
+    networks:
+      - geo_net
+    depends_on:
+      - backend
+
 networks:
   geo_net:
     driver: bridge
