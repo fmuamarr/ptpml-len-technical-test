@@ -1,0 +1,876 @@
+{
+  "info": {
+    "_postman_id": "5e066c00-61a2-4c8b-b9ba-de613a617761",
+    "name": "PT PML - PT Len Innovation Technology Technical Test - Fadillah Muamar",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "49229324"
+  },
+  "item": [
+    {
+      "name": "Main Endpoint",
+      "item": [
+        {
+          "name": "Get Entity List",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{host}}/api/v1/entities",
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "entities"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Success",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{host}}/api/v1/entities",
+                  "host": [
+                    "{{host}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "entities"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "vary",
+                  "value": "Origin"
+                },
+                {
+                  "key": "date",
+                  "value": "Tue, 06 Oct 2026 11:51:53 GMT"
+                },
+                {
+                  "key": "transfer-encoding",
+                  "value": "chunked"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"success\": true,\n  \"message\": \"Daftar entitas berhasil diambil.\",\n  \"data\": [\n    {\n      \"id\": \"c82b8353-db6c-41ca-9b3c-7fb7f8c6232e\",\n      \"name\": \"KRI Nusantara 01\",\n      \"type\": \"VESSEL\",\n      \"status\": \"ACTIVE\",\n      \"latitude\": -6.12,\n      \"longitude\": 106.75,\n      \"metadata\": {\n        \"displacement_tons\": 1200\n      },\n      \"created_at\": \"2026-10-06T11:09:41.145325Z\",\n      \"updated_at\": \"2026-10-06T11:09:41.145325Z\",\n      \"type_detail\": {\n        \"code\": \"VESSEL\",\n        \"name\": \"Kapal / Unit Laut\",\n        \"icon\": \"ship\",\n        \"color\": \"#6366F1\",\n        \"created_at\": \"2026-10-06T11:01:11.446804Z\",\n        \"updated_at\": \"2026-10-06T11:01:11.446804Z\"\n      }\n    },\n    {\n      \"id\": \"c4c2de4f-eb90-4df2-acd0-f8874c160f0e\",\n      \"name\": \"Drone Surveillance 01\",\n      \"type\": \"VEHICLE\",\n      \"status\": \"ACTIVE\",\n      \"latitude\": -6.903444,\n      \"longitude\": 107.618611,\n      \"metadata\": {\n        \"battery\": 85,\n        \"altitude_m\": 120\n      },\n      \"created_at\": \"2026-10-06T09:57:57.823114Z\",\n      \"updated_at\": \"2026-10-06T09:57:57.823114Z\",\n      \"type_detail\": {\n        \"code\": \"VEHICLE\",\n        \"name\": \"Kendaraan / Unit Patroli\",\n        \"icon\": \"car\",\n        \"color\": \"#3B82F6\",\n        \"created_at\": \"2026-10-06T11:01:11.446804Z\",\n        \"updated_at\": \"2026-10-06T11:01:11.446804Z\"\n      }\n    },\n    {\n      \"id\": \"8364723f-03af-4e32-bf54-4868ab770893\",\n      \"name\": \"Drone Surveillance 01\",\n      \"type\": \"VEHICLE\",\n      \"status\": \"ACTIVE\",\n      \"latitude\": -6.903444,\n      \"longitude\": 107.618611,\n      \"metadata\": {\n        \"battery\": 85,\n        \"altitude_m\": 120\n      },\n      \"created_at\": \"2026-10-06T09:57:57.685854Z\",\n      \"updated_at\": \"2026-10-06T09:57:57.685854Z\",\n      \"type_detail\": {\n        \"code\": \"VEHICLE\",\n        \"name\": \"Kendaraan / Unit Patroli\",\n        \"icon\": \"car\",\n        \"color\": \"#3B82F6\",\n        \"created_at\": \"2026-10-06T11:01:11.446804Z\",\n        \"updated_at\": \"2026-10-06T11:01:11.446804Z\"\n      }\n    },\n    {\n      \"id\": \"33756379-b1a8-4f6d-90dc-3317a15afa6c\",\n      \"name\": \"Drone Surveillance 01\",\n      \"type\": \"VEHICLE\",\n      \"status\": \"ACTIVE\",\n      \"latitude\": -6.903444,\n      \"longitude\": 107.618611,\n      \"metadata\": {\n        \"battery\": 85,\n        \"altitude_m\": 120\n      },\n      \"created_at\": \"2026-10-06T09:57:57.537035Z\",\n      \"updated_at\": \"2026-10-06T09:57:57.537035Z\",\n      \"type_detail\": {\n        \"code\": \"VEHICLE\",\n        \"name\": \"Kendaraan / Unit Patroli\",\n        \"icon\": \"car\",\n        \"color\": \"#3B82F6\",\n        \"created_at\": \"2026-10-06T11:01:11.446804Z\",\n        \"updated_at\": \"2026-10-06T11:01:11.446804Z\"\n      }\n    },\n    {\n      \"id\": \"d8f6f843-6e26-4b60-aa6d-8a7b3f4471f0\",\n      \"name\": \"Drone Surveillance 01\",\n      \"type\": \"VEHICLE\",\n      \"status\": \"ACTIVE\",\n      \"latitude\": -6.903444,\n      \"longitude\": 107.618611,\n      \"metadata\": {\n        \"battery\": 85,\n        \"altitude_m\": 120\n      },\n      \"created_at\": \"2026-10-06T09:57:57.3964Z\",\n      \"updated_at\": \"2026-10-06T09:57:57.3964Z\",\n      \"type_detail\": {\n        \"code\": \"VEHICLE\",\n        \"name\": \"Kendaraan / Unit Patroli\",\n        \"icon\": \"car\",\n        \"color\": \"#3B82F6\",\n        \"created_at\": \"2026-10-06T11:01:11.446804Z\",\n        \"updated_at\": \"2026-10-06T11:01:11.446804Z\"\n      }\n    },\n    {\n      \"id\": \"f08c8ec5-6b70-477b-8d8f-b52ca21bd963\",\n      \"name\": \"Drone Surveillance 01\",\n      \"type\": \"VEHICLE\",\n      \"status\": \"ACTIVE\",\n      \"latitude\": -6.903444,\n      \"longitude\": 107.618611,\n      \"metadata\": {\n        \"battery\": 85,\n        \"altitude_m\": 120\n      },\n      \"created_at\": \"2026-10-06T09:57:57.269459Z\",\n      \"updated_at\": \"2026-10-06T09:57:57.269459Z\",\n      \"type_detail\": {\n        \"code\": \"VEHICLE\",\n        \"name\": \"Kendaraan / Unit Patroli\",\n        \"icon\": \"car\",\n        \"color\": \"#3B82F6\",\n        \"created_at\": \"2026-10-06T11:01:11.446804Z\",\n        \"updated_at\": \"2026-10-06T11:01:11.446804Z\"\n      }\n    },\n    {\n      \"id\": \"b7645a24-33e5-41fd-baff-10d14eb3e469\",\n      \"name\": \"Drone Surveillance 01\",\n      \"type\": \"VEHICLE\",\n      \"status\": \"ACTIVE\",\n      \"latitude\": -6.903444,\n      \"longitude\": 107.618611,\n      \"metadata\": {\n        \"battery\": 85,\n        \"altitude_m\": 120\n      },\n      \"created_at\": \"2026-10-06T09:57:57.149851Z\",\n      \"updated_at\": \"2026-10-06T09:57:57.149851Z\",\n      \"type_detail\": {\n        \"code\": \"VEHICLE\",\n        \"name\": \"Kendaraan / Unit Patroli\",\n        \"icon\": \"car\",\n        \"color\": \"#3B82F6\",\n        \"created_at\": \"2026-10-06T11:01:11.446804Z\",\n        \"updated_at\": \"2026-10-06T11:01:11.446804Z\"\n      }\n    },\n    {\n      \"id\": \"43309f1b-e235-4acd-9a01-a69782e78ad1\",\n      \"name\": \"Drone Surveillance 01\",\n      \"type\": \"VEHICLE\",\n      \"status\": \"ACTIVE\",\n      \"latitude\": -6.903444,\n      \"longitude\": 107.618611,\n      \"metadata\": {\n        \"battery\": 85,\n        \"altitude_m\": 120\n      },\n      \"created_at\": \"2026-10-06T09:57:56.985988Z\",\n      \"updated_at\": \"2026-10-06T09:57:56.985988Z\",\n      \"type_detail\": {\n        \"code\": \"VEHICLE\",\n        \"name\": \"Kendaraan / Unit Patroli\",\n        \"icon\": \"car\",\n        \"color\": \"#3B82F6\",\n        \"created_at\": \"2026-10-06T11:01:11.446804Z\",\n        \"updated_at\": \"2026-10-06T11:01:11.446804Z\"\n      }\n    },\n    {\n      \"id\": \"8dde7106-59df-4003-90bc-e13d4d6f6262\",\n      \"name\": \"Drone Surveillance 01\",\n      \"type\": \"VEHICLE\",\n      \"status\": \"ACTIVE\",\n      \"latitude\": -6.903444,\n      \"longitude\": 107.618611,\n      \"metadata\": {\n        \"battery\": 85,\n        \"altitude_m\": 120\n      },\n      \"created_at\": \"2026-10-06T09:57:56.853416Z\",\n      \"updated_at\": \"2026-10-06T09:57:56.853416Z\",\n      \"type_detail\": {\n        \"code\": \"VEHICLE\",\n        \"name\": \"Kendaraan / Unit Patroli\",\n        \"icon\": \"car\",\n        \"color\": \"#3B82F6\",\n        \"created_at\": \"2026-10-06T11:01:11.446804Z\",\n        \"updated_at\": \"2026-10-06T11:01:11.446804Z\"\n      }\n    },\n    {\n      \"id\": \"17095759-3fc6-4f30-a619-c3b5f14f6204\",\n      \"name\": \"Drone Surveillance 01\",\n      \"type\": \"VEHICLE\",\n      \"status\": \"ACTIVE\",\n      \"latitude\": -6.903444,\n      \"longitude\": 107.618611,\n      \"metadata\": {\n        \"battery\": 85,\n        \"altitude_m\": 120\n      },\n      \"created_at\": \"2026-10-06T09:57:56.715966Z\",\n      \"updated_at\": \"2026-10-06T09:57:56.715966Z\",\n      \"type_detail\": {\n        \"code\": \"VEHICLE\",\n        \"name\": \"Kendaraan / Unit Patroli\",\n        \"icon\": \"car\",\n        \"color\": \"#3B82F6\",\n        \"created_at\": \"2026-10-06T11:01:11.446804Z\",\n        \"updated_at\": \"2026-10-06T11:01:11.446804Z\"\n      }\n    },\n    {\n      \"id\": \"1a5c8027-326f-4c21-9775-9e79231a17e2\",\n      \"name\": \"Drone Surveillance 01\",\n      \"type\": \"VEHICLE\",\n      \"status\": \"ACTIVE\",\n      \"latitude\": -6.903444,\n      \"longitude\": 107.618611,\n      \"metadata\": {\n        \"battery\": 85,\n        \"altitude_m\": 120\n      },\n      \"created_at\": \"2026-10-06T09:57:56.578344Z\",\n      \"updated_at\": \"2026-10-06T09:57:56.578344Z\",\n      \"type_detail\": {\n        \"code\": \"VEHICLE\",\n        \"name\": \"Kendaraan / Unit Patroli\",\n        \"icon\": \"car\",\n        \"color\": \"#3B82F6\",\n        \"created_at\": \"2026-10-06T11:01:11.446804Z\",\n        \"updated_at\": \"2026-10-06T11:01:11.446804Z\"\n      }\n    },\n    {\n      \"id\": \"94b5f515-39fe-4a84-8cc7-751c9604cd3b\",\n      \"name\": \"Drone Surveillance 01\",\n      \"type\": \"VEHICLE\",\n      \"status\": \"ACTIVE\",\n      \"latitude\": -6.903444,\n      \"longitude\": 107.618611,\n      \"metadata\": {\n        \"battery\": 85,\n        \"altitude_m\": 120\n      },\n      \"created_at\": \"2026-10-06T09:57:56.412097Z\",\n      \"updated_at\": \"2026-10-06T09:57:56.412097Z\",\n      \"type_detail\": {\n        \"code\": \"VEHICLE\",\n        \"name\": \"Kendaraan / Unit Patroli\",\n        \"icon\": \"car\",\n        \"color\": \"#3B82F6\",\n        \"created_at\": \"2026-10-06T11:01:11.446804Z\",\n        \"updated_at\": \"2026-10-06T11:01:11.446804Z\"\n      }\n    },\n    {\n      \"id\": \"228fe523-3c19-4feb-82f1-fb472ec5583f\",\n      \"name\": \"Drone Surveillance 01\",\n      \"type\": \"VEHICLE\",\n      \"status\": \"ACTIVE\",\n      \"latitude\": -6.903444,\n      \"longitude\": 107.618611,\n      \"metadata\": {\n        \"battery\": 85,\n        \"altitude_m\": 120\n      },\n      \"created_at\": \"2026-10-06T09:57:56.20347Z\",\n      \"updated_at\": \"2026-10-06T09:57:56.20347Z\",\n      \"type_detail\": {\n        \"code\": \"VEHICLE\",\n        \"name\": \"Kendaraan / Unit Patroli\",\n        \"icon\": \"car\",\n        \"color\": \"#3B82F6\",\n        \"created_at\": \"2026-10-06T11:01:11.446804Z\",\n        \"updated_at\": \"2026-10-06T11:01:11.446804Z\"\n      }\n    },\n    {\n      \"id\": \"94a95187-f5b2-4f42-b39f-78f29f5599b1\",\n      \"name\": \"Drone Surveillance 01\",\n      \"type\": \"VEHICLE\",\n      \"status\": \"ACTIVE\",\n      \"latitude\": -6.903444,\n      \"longitude\": 107.618611,\n      \"metadata\": {\n        \"battery\": 85,\n        \"altitude_m\": 120\n      },\n      \"created_at\": \"2026-10-06T09:57:55.748658Z\",\n      \"updated_at\": \"2026-10-06T09:57:55.748658Z\",\n      \"type_detail\": {\n        \"code\": \"VEHICLE\",\n        \"name\": \"Kendaraan / Unit Patroli\",\n        \"icon\": \"car\",\n        \"color\": \"#3B82F6\",\n        \"created_at\": \"2026-10-06T11:01:11.446804Z\",\n        \"updated_at\": \"2026-10-06T11:01:11.446804Z\"\n      }\n    },\n    {\n      \"id\": \"0c33b80b-f215-4a73-955e-140b823fa813\",\n      \"name\": \"Drone Surveillance 01\",\n      \"type\": \"VEHICLE\",\n      \"status\": \"ACTIVE\",\n      \"latitude\": -6.903444,\n      \"longitude\": 107.618611,\n      \"metadata\": {\n        \"battery\": 85,\n        \"altitude_m\": 120\n      },\n      \"created_at\": \"2026-10-06T09:57:55.30107Z\",\n      \"updated_at\": \"2026-10-06T09:57:55.30107Z\",\n      \"type_detail\": {\n        \"code\": \"VEHICLE\",\n        \"name\": \"Kendaraan / Unit Patroli\",\n        \"icon\": \"car\",\n        \"color\": \"#3B82F6\",\n        \"created_at\": \"2026-10-06T11:01:11.446804Z\",\n        \"updated_at\": \"2026-10-06T11:01:11.446804Z\"\n      }\n    },\n    {\n      \"id\": \"c86922fc-65fd-4905-998a-6213f8e9e609\",\n      \"name\": \"Drone Surveillance 01\",\n      \"type\": \"VEHICLE\",\n      \"status\": \"ACTIVE\",\n      \"latitude\": -6.903444,\n      \"longitude\": 107.618611,\n      \"metadata\": {\n        \"battery\": 85,\n        \"altitude_m\": 120\n      },\n      \"created_at\": \"2026-10-06T09:57:53.862592Z\",\n      \"updated_at\": \"2026-10-06T09:57:53.862592Z\",\n      \"type_detail\": {\n        \"code\": \"VEHICLE\",\n        \"name\": \"Kendaraan / Unit Patroli\",\n        \"icon\": \"car\",\n        \"color\": \"#3B82F6\",\n        \"created_at\": \"2026-10-06T11:01:11.446804Z\",\n        \"updated_at\": \"2026-10-06T11:01:11.446804Z\"\n      }\n    },\n    {\n      \"id\": \"b0e65f80-a374-45c7-84b4-ba6b0961b615\",\n      \"name\": \"Drone Surveillance 01\",\n      \"type\": \"VEHICLE\",\n      \"status\": \"ACTIVE\",\n      \"latitude\": -6.903444,\n      \"longitude\": 107.618611,\n      \"metadata\": {\n        \"battery\": 85,\n        \"altitude_m\": 120\n      },\n      \"created_at\": \"2026-10-06T09:56:27.898161Z\",\n      \"updated_at\": \"2026-10-06T09:56:27.898161Z\",\n      \"type_detail\": {\n        \"code\": \"VEHICLE\",\n        \"name\": \"Kendaraan / Unit Patroli\",\n        \"icon\": \"car\",\n        \"color\": \"#3B82F6\",\n        \"created_at\": \"2026-10-06T11:01:11.446804Z\",\n        \"updated_at\": \"2026-10-06T11:01:11.446804Z\"\n      }\n    },\n    {\n      \"id\": \"dd8af46e-5815-4199-a790-f6ff72e8dcb1\",\n      \"name\": \"Drone Surveillance 01\",\n      \"type\": \"VEHICLE\",\n      \"status\": \"ACTIVE\",\n      \"latitude\": -6.903444,\n      \"longitude\": 107.618611,\n      \"metadata\": {\n        \"battery\": 85,\n        \"altitude_m\": 120\n      },\n      \"created_at\": \"2026-10-06T09:56:09.895117Z\",\n      \"updated_at\": \"2026-10-06T09:56:09.895117Z\",\n      \"type_detail\": {\n        \"code\": \"VEHICLE\",\n        \"name\": \"Kendaraan / Unit Patroli\",\n        \"icon\": \"car\",\n        \"color\": \"#3B82F6\",\n        \"created_at\": \"2026-10-06T11:01:11.446804Z\",\n        \"updated_at\": \"2026-10-06T11:01:11.446804Z\"\n      }\n    },\n    {\n      \"id\": \"a06bb8d5-757d-40e6-b74e-06476fcd3e58\",\n      \"name\": \"Test Vehicle\",\n      \"type\": \"VEHICLE\",\n      \"status\": \"ACTIVE\",\n      \"latitude\": -6.917,\n      \"longitude\": 107.619,\n      \"metadata\": {\n        \"speed_kph\": 30\n      },\n      \"created_at\": \"2026-10-06T09:13:35.695827Z\",\n      \"updated_at\": \"2026-10-06T09:13:35.695827Z\",\n      \"type_detail\": {\n        \"code\": \"VEHICLE\",\n        \"name\": \"Kendaraan / Unit Patroli\",\n        \"icon\": \"car\",\n        \"color\": \"#3B82F6\",\n        \"created_at\": \"2026-10-06T11:01:11.446804Z\",\n        \"updated_at\": \"2026-10-06T11:01:11.446804Z\"\n      }\n    },\n    {\n      \"id\": \"a11f2c94-1a3b-486a-8bfe-987766554433\",\n      \"name\": \"Weather Sensor Alpha\",\n      \"type\": \"IOT_DEVICE\",\n      \"status\": \"ACTIVE\",\n      \"latitude\": -6.914744,\n      \"longitude\": 107.609811,\n      \"metadata\": {\n        \"battery\": 92,\n        \"temperature_c\": 26.5\n      },\n      \"created_at\": \"2026-10-06T08:50:59.983857Z\",\n      \"updated_at\": \"2026-10-06T08:50:59.983857Z\",\n      \"type_detail\": {\n        \"code\": \"IOT_DEVICE\",\n        \"name\": \"Perangkat IoT / Sensor\",\n        \"icon\": \"cpu\",\n        \"color\": \"#10B981\",\n        \"created_at\": \"2026-10-06T11:01:11.446804Z\",\n        \"updated_at\": \"2026-10-06T11:01:11.446804Z\"\n      }\n    },\n    {\n      \"id\": \"b33a5d82-9f4a-431e-b83d-112233445566\",\n      \"name\": \"Radar Base Stations testing\",\n      \"type\": \"FACILITY\",\n      \"status\": \"ACTIVE\",\n      \"latitude\": -6.938889,\n      \"longitude\": 107.625556,\n      \"metadata\": {\n        \"personnel\": 12,\n        \"operational_hours\": \"24/7\"\n      },\n      \"created_at\": \"2026-10-06T08:50:59.983857Z\",\n      \"updated_at\": \"2026-10-06T08:50:59.983857Z\",\n      \"type_detail\": {\n        \"code\": \"FACILITY\",\n        \"name\": \"Fasilitas / Markas\",\n        \"icon\": \"radio-tower\",\n        \"color\": \"#F59E0B\",\n        \"created_at\": \"2026-10-06T11:01:11.446804Z\",\n        \"updated_at\": \"2026-10-06T11:01:11.446804Z\"\n      }\n    },\n    {\n      \"id\": \"c68e1e75-8022-4a0b-9366-079ce2e6c521\",\n      \"name\": \"Patrol Tactical Unit 01\",\n      \"type\": \"VEHICLE\",\n      \"status\": \"ACTIVE\",\n      \"latitude\": -6.917464,\n      \"longitude\": 107.619123,\n      \"metadata\": {\n        \"heading\": 120,\n        \"speed_kph\": 55\n      },\n      \"created_at\": \"2026-10-06T08:50:59.983857Z\",\n      \"updated_at\": \"2026-10-06T08:50:59.983857Z\",\n      \"type_detail\": {\n        \"code\": \"VEHICLE\",\n        \"name\": \"Kendaraan / Unit Patroli\",\n        \"icon\": \"car\",\n        \"color\": \"#3B82F6\",\n        \"created_at\": \"2026-10-06T11:01:11.446804Z\",\n        \"updated_at\": \"2026-10-06T11:01:11.446804Z\"\n      }\n    }\n  ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get Entity by Type",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{host}}/api/v1/entities?type=VEHICLE",
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "entities"
+              ],
+              "query": [
+                {
+                  "key": "type",
+                  "value": "VEHICLE"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Success",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{host}}/api/v1/entities?type=VEHICLE",
+                  "host": [
+                    "{{host}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "entities"
+                  ],
+                  "query": [
+                    {
+                      "key": "type",
+                      "value": "VEHICLE"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "vary",
+                  "value": "Origin"
+                },
+                {
+                  "key": "date",
+                  "value": "Tue, 06 Oct 2026 11:52:02 GMT"
+                },
+                {
+                  "key": "transfer-encoding",
+                  "value": "chunked"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"success\": true,\n  \"message\": \"Daftar entitas berhasil diambil.\",\n  \"data\": [\n    {\n      \"id\": \"c4c2de4f-eb90-4df2-acd0-f8874c160f0e\",\n      \"name\": \"Drone Surveillance 01\",\n      \"type\": \"VEHICLE\",\n      \"status\": \"ACTIVE\",\n      \"latitude\": -6.903444,\n      \"longitude\": 107.618611,\n      \"metadata\": {\n        \"battery\": 85,\n        \"altitude_m\": 120\n      },\n      \"created_at\": \"2026-10-06T09:57:57.823114Z\",\n      \"updated_at\": \"2026-10-06T09:57:57.823114Z\",\n      \"type_detail\": {\n        \"code\": \"VEHICLE\",\n        \"name\": \"Kendaraan / Unit Patroli\",\n        \"icon\": \"car\",\n        \"color\": \"#3B82F6\",\n        \"created_at\": \"2026-10-06T11:01:11.446804Z\",\n        \"updated_at\": \"2026-10-06T11:01:11.446804Z\"\n      }\n    },\n    {\n      \"id\": \"8364723f-03af-4e32-bf54-4868ab770893\",\n      \"name\": \"Drone Surveillance 01\",\n      \"type\": \"VEHICLE\",\n      \"status\": \"ACTIVE\",\n      \"latitude\": -6.903444,\n      \"longitude\": 107.618611,\n      \"metadata\": {\n        \"battery\": 85,\n        \"altitude_m\": 120\n      },\n      \"created_at\": \"2026-10-06T09:57:57.685854Z\",\n      \"updated_at\": \"2026-10-06T09:57:57.685854Z\",\n      \"type_detail\": {\n        \"code\": \"VEHICLE\",\n        \"name\": \"Kendaraan / Unit Patroli\",\n        \"icon\": \"car\",\n        \"color\": \"#3B82F6\",\n        \"created_at\": \"2026-10-06T11:01:11.446804Z\",\n        \"updated_at\": \"2026-10-06T11:01:11.446804Z\"\n      }\n    },\n    {\n      \"id\": \"33756379-b1a8-4f6d-90dc-3317a15afa6c\",\n      \"name\": \"Drone Surveillance 01\",\n      \"type\": \"VEHICLE\",\n      \"status\": \"ACTIVE\",\n      \"latitude\": -6.903444,\n      \"longitude\": 107.618611,\n      \"metadata\": {\n        \"battery\": 85,\n        \"altitude_m\": 120\n      },\n      \"created_at\": \"2026-10-06T09:57:57.537035Z\",\n      \"updated_at\": \"2026-10-06T09:57:57.537035Z\",\n      \"type_detail\": {\n        \"code\": \"VEHICLE\",\n        \"name\": \"Kendaraan / Unit Patroli\",\n        \"icon\": \"car\",\n        \"color\": \"#3B82F6\",\n        \"created_at\": \"2026-10-06T11:01:11.446804Z\",\n        \"updated_at\": \"2026-10-06T11:01:11.446804Z\"\n      }\n    },\n    {\n      \"id\": \"d8f6f843-6e26-4b60-aa6d-8a7b3f4471f0\",\n      \"name\": \"Drone Surveillance 01\",\n      \"type\": \"VEHICLE\",\n      \"status\": \"ACTIVE\",\n      \"latitude\": -6.903444,\n      \"longitude\": 107.618611,\n      \"metadata\": {\n        \"battery\": 85,\n        \"altitude_m\": 120\n      },\n      \"created_at\": \"2026-10-06T09:57:57.3964Z\",\n      \"updated_at\": \"2026-10-06T09:57:57.3964Z\",\n      \"type_detail\": {\n        \"code\": \"VEHICLE\",\n        \"name\": \"Kendaraan / Unit Patroli\",\n        \"icon\": \"car\",\n        \"color\": \"#3B82F6\",\n        \"created_at\": \"2026-10-06T11:01:11.446804Z\",\n        \"updated_at\": \"2026-10-06T11:01:11.446804Z\"\n      }\n    },\n    {\n      \"id\": \"f08c8ec5-6b70-477b-8d8f-b52ca21bd963\",\n      \"name\": \"Drone Surveillance 01\",\n      \"type\": \"VEHICLE\",\n      \"status\": \"ACTIVE\",\n      \"latitude\": -6.903444,\n      \"longitude\": 107.618611,\n      \"metadata\": {\n        \"battery\": 85,\n        \"altitude_m\": 120\n      },\n      \"created_at\": \"2026-10-06T09:57:57.269459Z\",\n      \"updated_at\": \"2026-10-06T09:57:57.269459Z\",\n      \"type_detail\": {\n        \"code\": \"VEHICLE\",\n        \"name\": \"Kendaraan / Unit Patroli\",\n        \"icon\": \"car\",\n        \"color\": \"#3B82F6\",\n        \"created_at\": \"2026-10-06T11:01:11.446804Z\",\n        \"updated_at\": \"2026-10-06T11:01:11.446804Z\"\n      }\n    },\n    {\n      \"id\": \"b7645a24-33e5-41fd-baff-10d14eb3e469\",\n      \"name\": \"Drone Surveillance 01\",\n      \"type\": \"VEHICLE\",\n      \"status\": \"ACTIVE\",\n      \"latitude\": -6.903444,\n      \"longitude\": 107.618611,\n      \"metadata\": {\n        \"battery\": 85,\n        \"altitude_m\": 120\n      },\n      \"created_at\": \"2026-10-06T09:57:57.149851Z\",\n      \"updated_at\": \"2026-10-06T09:57:57.149851Z\",\n      \"type_detail\": {\n        \"code\": \"VEHICLE\",\n        \"name\": \"Kendaraan / Unit Patroli\",\n        \"icon\": \"car\",\n        \"color\": \"#3B82F6\",\n        \"created_at\": \"2026-10-06T11:01:11.446804Z\",\n        \"updated_at\": \"2026-10-06T11:01:11.446804Z\"\n      }\n    },\n    {\n      \"id\": \"43309f1b-e235-4acd-9a01-a69782e78ad1\",\n      \"name\": \"Drone Surveillance 01\",\n      \"type\": \"VEHICLE\",\n      \"status\": \"ACTIVE\",\n      \"latitude\": -6.903444,\n      \"longitude\": 107.618611,\n      \"metadata\": {\n        \"battery\": 85,\n        \"altitude_m\": 120\n      },\n      \"created_at\": \"2026-10-06T09:57:56.985988Z\",\n      \"updated_at\": \"2026-10-06T09:57:56.985988Z\",\n      \"type_detail\": {\n        \"code\": \"VEHICLE\",\n        \"name\": \"Kendaraan / Unit Patroli\",\n        \"icon\": \"car\",\n        \"color\": \"#3B82F6\",\n        \"created_at\": \"2026-10-06T11:01:11.446804Z\",\n        \"updated_at\": \"2026-10-06T11:01:11.446804Z\"\n      }\n    },\n    {\n      \"id\": \"8dde7106-59df-4003-90bc-e13d4d6f6262\",\n      \"name\": \"Drone Surveillance 01\",\n      \"type\": \"VEHICLE\",\n      \"status\": \"ACTIVE\",\n      \"latitude\": -6.903444,\n      \"longitude\": 107.618611,\n      \"metadata\": {\n        \"battery\": 85,\n        \"altitude_m\": 120\n      },\n      \"created_at\": \"2026-10-06T09:57:56.853416Z\",\n      \"updated_at\": \"2026-10-06T09:57:56.853416Z\",\n      \"type_detail\": {\n        \"code\": \"VEHICLE\",\n        \"name\": \"Kendaraan / Unit Patroli\",\n        \"icon\": \"car\",\n        \"color\": \"#3B82F6\",\n        \"created_at\": \"2026-10-06T11:01:11.446804Z\",\n        \"updated_at\": \"2026-10-06T11:01:11.446804Z\"\n      }\n    },\n    {\n      \"id\": \"17095759-3fc6-4f30-a619-c3b5f14f6204\",\n      \"name\": \"Drone Surveillance 01\",\n      \"type\": \"VEHICLE\",\n      \"status\": \"ACTIVE\",\n      \"latitude\": -6.903444,\n      \"longitude\": 107.618611,\n      \"metadata\": {\n        \"battery\": 85,\n        \"altitude_m\": 120\n      },\n      \"created_at\": \"2026-10-06T09:57:56.715966Z\",\n      \"updated_at\": \"2026-10-06T09:57:56.715966Z\",\n      \"type_detail\": {\n        \"code\": \"VEHICLE\",\n        \"name\": \"Kendaraan / Unit Patroli\",\n        \"icon\": \"car\",\n        \"color\": \"#3B82F6\",\n        \"created_at\": \"2026-10-06T11:01:11.446804Z\",\n        \"updated_at\": \"2026-10-06T11:01:11.446804Z\"\n      }\n    },\n    {\n      \"id\": \"1a5c8027-326f-4c21-9775-9e79231a17e2\",\n      \"name\": \"Drone Surveillance 01\",\n      \"type\": \"VEHICLE\",\n      \"status\": \"ACTIVE\",\n      \"latitude\": -6.903444,\n      \"longitude\": 107.618611,\n      \"metadata\": {\n        \"battery\": 85,\n        \"altitude_m\": 120\n      },\n      \"created_at\": \"2026-10-06T09:57:56.578344Z\",\n      \"updated_at\": \"2026-10-06T09:57:56.578344Z\",\n      \"type_detail\": {\n        \"code\": \"VEHICLE\",\n        \"name\": \"Kendaraan / Unit Patroli\",\n        \"icon\": \"car\",\n        \"color\": \"#3B82F6\",\n        \"created_at\": \"2026-10-06T11:01:11.446804Z\",\n        \"updated_at\": \"2026-10-06T11:01:11.446804Z\"\n      }\n    },\n    {\n      \"id\": \"94b5f515-39fe-4a84-8cc7-751c9604cd3b\",\n      \"name\": \"Drone Surveillance 01\",\n      \"type\": \"VEHICLE\",\n      \"status\": \"ACTIVE\",\n      \"latitude\": -6.903444,\n      \"longitude\": 107.618611,\n      \"metadata\": {\n        \"battery\": 85,\n        \"altitude_m\": 120\n      },\n      \"created_at\": \"2026-10-06T09:57:56.412097Z\",\n      \"updated_at\": \"2026-10-06T09:57:56.412097Z\",\n      \"type_detail\": {\n        \"code\": \"VEHICLE\",\n        \"name\": \"Kendaraan / Unit Patroli\",\n        \"icon\": \"car\",\n        \"color\": \"#3B82F6\",\n        \"created_at\": \"2026-10-06T11:01:11.446804Z\",\n        \"updated_at\": \"2026-10-06T11:01:11.446804Z\"\n      }\n    },\n    {\n      \"id\": \"228fe523-3c19-4feb-82f1-fb472ec5583f\",\n      \"name\": \"Drone Surveillance 01\",\n      \"type\": \"VEHICLE\",\n      \"status\": \"ACTIVE\",\n      \"latitude\": -6.903444,\n      \"longitude\": 107.618611,\n      \"metadata\": {\n        \"battery\": 85,\n        \"altitude_m\": 120\n      },\n      \"created_at\": \"2026-10-06T09:57:56.20347Z\",\n      \"updated_at\": \"2026-10-06T09:57:56.20347Z\",\n      \"type_detail\": {\n        \"code\": \"VEHICLE\",\n        \"name\": \"Kendaraan / Unit Patroli\",\n        \"icon\": \"car\",\n        \"color\": \"#3B82F6\",\n        \"created_at\": \"2026-10-06T11:01:11.446804Z\",\n        \"updated_at\": \"2026-10-06T11:01:11.446804Z\"\n      }\n    },\n    {\n      \"id\": \"94a95187-f5b2-4f42-b39f-78f29f5599b1\",\n      \"name\": \"Drone Surveillance 01\",\n      \"type\": \"VEHICLE\",\n      \"status\": \"ACTIVE\",\n      \"latitude\": -6.903444,\n      \"longitude\": 107.618611,\n      \"metadata\": {\n        \"battery\": 85,\n        \"altitude_m\": 120\n      },\n      \"created_at\": \"2026-10-06T09:57:55.748658Z\",\n      \"updated_at\": \"2026-10-06T09:57:55.748658Z\",\n      \"type_detail\": {\n        \"code\": \"VEHICLE\",\n        \"name\": \"Kendaraan / Unit Patroli\",\n        \"icon\": \"car\",\n        \"color\": \"#3B82F6\",\n        \"created_at\": \"2026-10-06T11:01:11.446804Z\",\n        \"updated_at\": \"2026-10-06T11:01:11.446804Z\"\n      }\n    },\n    {\n      \"id\": \"0c33b80b-f215-4a73-955e-140b823fa813\",\n      \"name\": \"Drone Surveillance 01\",\n      \"type\": \"VEHICLE\",\n      \"status\": \"ACTIVE\",\n      \"latitude\": -6.903444,\n      \"longitude\": 107.618611,\n      \"metadata\": {\n        \"battery\": 85,\n        \"altitude_m\": 120\n      },\n      \"created_at\": \"2026-10-06T09:57:55.30107Z\",\n      \"updated_at\": \"2026-10-06T09:57:55.30107Z\",\n      \"type_detail\": {\n        \"code\": \"VEHICLE\",\n        \"name\": \"Kendaraan / Unit Patroli\",\n        \"icon\": \"car\",\n        \"color\": \"#3B82F6\",\n        \"created_at\": \"2026-10-06T11:01:11.446804Z\",\n        \"updated_at\": \"2026-10-06T11:01:11.446804Z\"\n      }\n    },\n    {\n      \"id\": \"c86922fc-65fd-4905-998a-6213f8e9e609\",\n      \"name\": \"Drone Surveillance 01\",\n      \"type\": \"VEHICLE\",\n      \"status\": \"ACTIVE\",\n      \"latitude\": -6.903444,\n      \"longitude\": 107.618611,\n      \"metadata\": {\n        \"battery\": 85,\n        \"altitude_m\": 120\n      },\n      \"created_at\": \"2026-10-06T09:57:53.862592Z\",\n      \"updated_at\": \"2026-10-06T09:57:53.862592Z\",\n      \"type_detail\": {\n        \"code\": \"VEHICLE\",\n        \"name\": \"Kendaraan / Unit Patroli\",\n        \"icon\": \"car\",\n        \"color\": \"#3B82F6\",\n        \"created_at\": \"2026-10-06T11:01:11.446804Z\",\n        \"updated_at\": \"2026-10-06T11:01:11.446804Z\"\n      }\n    },\n    {\n      \"id\": \"b0e65f80-a374-45c7-84b4-ba6b0961b615\",\n      \"name\": \"Drone Surveillance 01\",\n      \"type\": \"VEHICLE\",\n      \"status\": \"ACTIVE\",\n      \"latitude\": -6.903444,\n      \"longitude\": 107.618611,\n      \"metadata\": {\n        \"battery\": 85,\n        \"altitude_m\": 120\n      },\n      \"created_at\": \"2026-10-06T09:56:27.898161Z\",\n      \"updated_at\": \"2026-10-06T09:56:27.898161Z\",\n      \"type_detail\": {\n        \"code\": \"VEHICLE\",\n        \"name\": \"Kendaraan / Unit Patroli\",\n        \"icon\": \"car\",\n        \"color\": \"#3B82F6\",\n        \"created_at\": \"2026-10-06T11:01:11.446804Z\",\n        \"updated_at\": \"2026-10-06T11:01:11.446804Z\"\n      }\n    },\n    {\n      \"id\": \"dd8af46e-5815-4199-a790-f6ff72e8dcb1\",\n      \"name\": \"Drone Surveillance 01\",\n      \"type\": \"VEHICLE\",\n      \"status\": \"ACTIVE\",\n      \"latitude\": -6.903444,\n      \"longitude\": 107.618611,\n      \"metadata\": {\n        \"battery\": 85,\n        \"altitude_m\": 120\n      },\n      \"created_at\": \"2026-10-06T09:56:09.895117Z\",\n      \"updated_at\": \"2026-10-06T09:56:09.895117Z\",\n      \"type_detail\": {\n        \"code\": \"VEHICLE\",\n        \"name\": \"Kendaraan / Unit Patroli\",\n        \"icon\": \"car\",\n        \"color\": \"#3B82F6\",\n        \"created_at\": \"2026-10-06T11:01:11.446804Z\",\n        \"updated_at\": \"2026-10-06T11:01:11.446804Z\"\n      }\n    },\n    {\n      \"id\": \"a06bb8d5-757d-40e6-b74e-06476fcd3e58\",\n      \"name\": \"Test Vehicle\",\n      \"type\": \"VEHICLE\",\n      \"status\": \"ACTIVE\",\n      \"latitude\": -6.917,\n      \"longitude\": 107.619,\n      \"metadata\": {\n        \"speed_kph\": 30\n      },\n      \"created_at\": \"2026-10-06T09:13:35.695827Z\",\n      \"updated_at\": \"2026-10-06T09:13:35.695827Z\",\n      \"type_detail\": {\n        \"code\": \"VEHICLE\",\n        \"name\": \"Kendaraan / Unit Patroli\",\n        \"icon\": \"car\",\n        \"color\": \"#3B82F6\",\n        \"created_at\": \"2026-10-06T11:01:11.446804Z\",\n        \"updated_at\": \"2026-10-06T11:01:11.446804Z\"\n      }\n    },\n    {\n      \"id\": \"c68e1e75-8022-4a0b-9366-079ce2e6c521\",\n      \"name\": \"Patrol Tactical Unit 01\",\n      \"type\": \"VEHICLE\",\n      \"status\": \"ACTIVE\",\n      \"latitude\": -6.917464,\n      \"longitude\": 107.619123,\n      \"metadata\": {\n        \"heading\": 120,\n        \"speed_kph\": 55\n      },\n      \"created_at\": \"2026-10-06T08:50:59.983857Z\",\n      \"updated_at\": \"2026-10-06T08:50:59.983857Z\",\n      \"type_detail\": {\n        \"code\": \"VEHICLE\",\n        \"name\": \"Kendaraan / Unit Patroli\",\n        \"icon\": \"car\",\n        \"color\": \"#3B82F6\",\n        \"created_at\": \"2026-10-06T11:01:11.446804Z\",\n        \"updated_at\": \"2026-10-06T11:01:11.446804Z\"\n      }\n    }\n  ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "Create Entity",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"Drone Surveillance 01\",\n    \"type\": \"VEHICLE\",\n    \"status\": \"ACTIVE\",\n    \"latitude\": -6.903444,\n    \"longitude\": 107.618611,\n    \"metadata\": {\"altitude_m\": 120, \"battery\": 85}\n  }",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{host}}/api/v1/entities",
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "entities"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"name\": \"Drone Surveillance 01\",\n    \"type\": \"VEHICLE\",\n    \"status\": \"ACTIVE\",\n    \"latitude\": -6.903444,\n    \"longitude\": 107.618611,\n    \"metadata\": {\"altitude_m\": 120, \"battery\": 85}\n  }",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{host}}/api/v1/entities",
+                  "host": [
+                    "{{host}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "entities"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "vary",
+                  "value": "Origin"
+                },
+                {
+                  "key": "date",
+                  "value": "Tue, 06 Oct 2026 09:56:27 GMT"
+                },
+                {
+                  "key": "content-length",
+                  "value": "309"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"success\": true,\n  \"data\": {\n    \"id\": \"b0e65f80-a374-45c7-84b4-ba6b0961b615\",\n    \"name\": \"Drone Surveillance 01\",\n    \"type\": \"VEHICLE\",\n    \"status\": \"ACTIVE\",\n    \"latitude\": -6.903444,\n    \"longitude\": 107.618611,\n    \"metadata\": {\n      \"altitude_m\": 120,\n      \"battery\": 85\n    },\n    \"created_at\": \"2026-10-06T09:56:27.898161Z\",\n    \"updated_at\": \"2026-10-06T09:56:27.898161Z\"\n  }\n}"
+            },
+            {
+              "name": "Error Response",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"name\": \"Invalid Drone\",\n    \"type\": \"VEHICLE\",\n    \"status\": \"ACTIVE\",\n    \"latitude\": 95.5,\n    \"longitude\": 107.618611\n  }",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{host}}/api/v1/entities",
+                  "host": [
+                    "{{host}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "entities"
+                  ]
+                }
+              },
+              "status": "Unprocessable Entity",
+              "code": 422,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "vary",
+                  "value": "Origin"
+                },
+                {
+                  "key": "date",
+                  "value": "Tue, 06 Oct 2026 11:52:12 GMT"
+                },
+                {
+                  "key": "content-length",
+                  "value": "102"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"success\": false,\n  \"message\": \"Validasi gagal.\",\n  \"data\": null,\n  \"error\": \"Latitude: harus antara -90 dan 90\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Update Entity",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"Drone Surveillance 01 - Updated\",\n    \"type\": \"VEHICLE\",\n    \"status\": \"MAINTENANCE\",\n    \"latitude\": -6.203500,\n    \"longitude\": 107.618700,\n    \"metadata\": {\"status_note\": \"battery replacement\"}\n  }",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{host}}/api/v1/entities/{{entity_id}}",
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "entities",
+                "{{entity_id}}"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Success",
+              "originalRequest": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"name\": \"Drone Surveillance 01 - Updated\",\n    \"type\": \"VEHICLE\",\n    \"status\": \"MAINTENANCE\",\n    \"latitude\": -6.203500,\n    \"longitude\": 107.618700,\n    \"metadata\": {\"status_note\": \"battery replacement\"}\n  }",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{host}}/api/v1/entities/{{entity_id}}",
+                  "host": [
+                    "{{host}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "entities",
+                    "{{entity_id}}"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "vary",
+                  "value": "Origin"
+                },
+                {
+                  "key": "date",
+                  "value": "Tue, 06 Oct 2026 11:53:07 GMT"
+                },
+                {
+                  "key": "content-length",
+                  "value": "554"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"success\": true,\n  \"message\": \"Entitas berhasil diperbarui.\",\n  \"data\": {\n    \"id\": \"b0e65f80-a374-45c7-84b4-ba6b0961b615\",\n    \"name\": \"Drone Surveillance 01 - Updated\",\n    \"type\": \"VEHICLE\",\n    \"status\": \"MAINTENANCE\",\n    \"latitude\": -6.2035,\n    \"longitude\": 107.6187,\n    \"metadata\": {\n      \"status_note\": \"battery replacement\"\n    },\n    \"created_at\": \"2026-10-06T09:56:27.898161Z\",\n    \"updated_at\": \"2026-10-06T11:53:07.596397542Z\",\n    \"type_detail\": {\n      \"code\": \"VEHICLE\",\n      \"name\": \"Kendaraan / Unit Patroli\",\n      \"icon\": \"car\",\n      \"color\": \"#3B82F6\",\n      \"created_at\": \"2026-10-06T11:01:11.446804Z\",\n      \"updated_at\": \"2026-10-06T11:01:11.446804Z\"\n    }\n  }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Delete Entity",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{host}}/api/v1/entities/{{entity_id}}",
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "entities",
+                "{{entity_id}}"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Success",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "{{host}}/api/v1/entities/{{entity_id}}",
+                  "host": [
+                    "{{host}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "entities",
+                    "{{entity_id}}"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "vary",
+                  "value": "Origin"
+                },
+                {
+                  "key": "date",
+                  "value": "Tue, 06 Oct 2026 11:53:24 GMT"
+                },
+                {
+                  "key": "content-length",
+                  "value": "67"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"success\": true,\n  \"message\": \"Entitas berhasil dihapus.\",\n  \"data\": null\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Master Data",
+      "item": [
+        {
+          "name": "Get Entity Type List",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{host}}/api/v1/entity-types",
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "entity-types"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Success",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{host}}/api/v1/entity-types",
+                  "host": [
+                    "{{host}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "entity-types"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "vary",
+                  "value": "Origin"
+                },
+                {
+                  "key": "date",
+                  "value": "Tue, 06 Oct 2026 11:53:46 GMT"
+                },
+                {
+                  "key": "content-length",
+                  "value": "1234"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"success\": true,\n  \"message\": \"Daftar tipe entitas berhasil diambil.\",\n  \"data\": [\n    {\n      \"code\": \"CHECKPOINT\",\n      \"name\": \"Gate Post\",\n      \"icon\": \"flag\",\n      \"color\": \"#64748B\",\n      \"created_at\": \"2026-10-06T11:17:09.323586Z\",\n      \"updated_at\": \"2026-10-06T11:17:09.323586Z\"\n    },\n    {\n      \"code\": \"FACILITY\",\n      \"name\": \"Fasilitas / Markas\",\n      \"icon\": \"radio-tower\",\n      \"color\": \"#F59E0B\",\n      \"created_at\": \"2026-10-06T11:01:11.446804Z\",\n      \"updated_at\": \"2026-10-06T11:01:11.446804Z\"\n    },\n    {\n      \"code\": \"IOT_DEVICE\",\n      \"name\": \"Perangkat IoT / Sensor\",\n      \"icon\": \"cpu\",\n      \"color\": \"#10B981\",\n      \"created_at\": \"2026-10-06T11:01:11.446804Z\",\n      \"updated_at\": \"2026-10-06T11:01:11.446804Z\"\n    },\n    {\n      \"code\": \"MOBIL\",\n      \"name\": \"Surveillance Drone\",\n      \"icon\": \"plane\",\n      \"color\": \"#8B5CF6\",\n      \"created_at\": \"2026-10-06T11:15:30.980096Z\",\n      \"updated_at\": \"2026-10-06T11:15:30.980096Z\"\n    },\n    {\n      \"code\": \"SUBMARINE\",\n      \"name\": \"Kapal Selam\",\n      \"icon\": \"anchor\",\n      \"color\": \"#1E3A5F\",\n      \"created_at\": \"2026-10-06T11:07:38.6027Z\",\n      \"updated_at\": \"2026-10-06T11:07:38.6027Z\"\n    },\n    {\n      \"code\": \"VEHICLE\",\n      \"name\": \"Kendaraan / Unit Patroli\",\n      \"icon\": \"car\",\n      \"color\": \"#3B82F6\",\n      \"created_at\": \"2026-10-06T11:01:11.446804Z\",\n      \"updated_at\": \"2026-10-06T11:01:11.446804Z\"\n    },\n    {\n      \"code\": \"VESSEL\",\n      \"name\": \"Kapal / Unit Laut\",\n      \"icon\": \"ship\",\n      \"color\": \"#6366F1\",\n      \"created_at\": \"2026-10-06T11:01:11.446804Z\",\n      \"updated_at\": \"2026-10-06T11:01:11.446804Z\"\n    }\n  ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get Entity Type by Code",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{host}}/api/v1/entity-types/{{entity_type}}",
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "entity-types",
+                "{{entity_type}}"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Success",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{host}}/api/v1/entity-types/{{entity_type}}",
+                  "host": [
+                    "{{host}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "entity-types",
+                    "{{entity_type}}"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "vary",
+                  "value": "Origin"
+                },
+                {
+                  "key": "date",
+                  "value": "Tue, 06 Oct 2026 11:54:14 GMT"
+                },
+                {
+                  "key": "content-length",
+                  "value": "237"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"success\": true,\n  \"message\": \"Tipe entitas berhasil diambil.\",\n  \"data\": {\n    \"code\": \"VEHICLE\",\n    \"name\": \"Kendaraan / Unit Patroli\",\n    \"icon\": \"car\",\n    \"color\": \"#3B82F6\",\n    \"created_at\": \"2026-10-06T11:01:11.446804Z\",\n    \"updated_at\": \"2026-10-06T11:01:11.446804Z\"\n  }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Create Entity Type",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"code\": \"DRONE\",\n    \"name\": \"Drone\",\n    \"icon\": \"drone\",\n    \"color\": \"#64748B\"\n  }",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{host}}/api/v1/entity-types",
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "entity-types"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Drone",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"code\": \"DRONE\",\n    \"name\": \"Drone\",\n    \"icon\": \"drone\",\n    \"color\": \"#64748B\"\n  }",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{host}}/api/v1/entity-types",
+                  "host": [
+                    "{{host}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "entity-types"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "vary",
+                  "value": "Origin"
+                },
+                {
+                  "key": "date",
+                  "value": "Tue, 06 Oct 2026 11:54:44 GMT"
+                },
+                {
+                  "key": "content-length",
+                  "value": "223"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"success\": true,\n  \"message\": \"Tipe entitas berhasil dibuat.\",\n  \"data\": {\n    \"code\": \"DRONE\",\n    \"name\": \"Drone\",\n    \"icon\": \"drone\",\n    \"color\": \"#64748B\",\n    \"created_at\": \"2026-10-06T11:54:44.991684421Z\",\n    \"updated_at\": \"2026-10-06T11:54:44.991684421Z\"\n  }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Update Entity Type",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"Tactical UAV Drone\",\n    \"icon\": \"navigation\",\n    \"color\": \"#7C3AED\"\n  }",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{host}}/api/v1/entity-types/{{entity_type}}",
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "entity-types",
+                "{{entity_type}}"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Success",
+              "originalRequest": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"name\": \"Tactical UAV Drone\",\n    \"icon\": \"navigation\",\n    \"color\": \"#7C3AED\"\n  }",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{host}}/api/v1/entity-types/{{entity_type}}",
+                  "host": [
+                    "{{host}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "entity-types",
+                    "{{entity_type}}"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "vary",
+                  "value": "Origin"
+                },
+                {
+                  "key": "date",
+                  "value": "Tue, 06 Oct 2026 11:55:13 GMT"
+                },
+                {
+                  "key": "content-length",
+                  "value": "242"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"success\": true,\n  \"message\": \"Tipe entitas berhasil diperbarui.\",\n  \"data\": {\n    \"code\": \"DRONE\",\n    \"name\": \"Tactical UAV Drone\",\n    \"icon\": \"navigation\",\n    \"color\": \"#7C3AED\",\n    \"created_at\": \"2026-10-06T11:54:44.991684Z\",\n    \"updated_at\": \"2026-10-06T11:55:13.125207503Z\"\n  }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Delete Entity Type",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{host}}/api/v1/entity-types/{{entity_type}}",
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "entity-types",
+                "{{entity_type}}"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Success",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "{{host}}/api/v1/entity-types/{{entity_type}}",
+                  "host": [
+                    "{{host}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "entity-types",
+                    "{{entity_type}}"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "vary",
+                  "value": "Origin"
+                },
+                {
+                  "key": "date",
+                  "value": "Tue, 06 Oct 2026 11:55:29 GMT"
+                },
+                {
+                  "key": "content-length",
+                  "value": "72"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"success\": true,\n  \"message\": \"Tipe entitas berhasil dihapus.\",\n  \"data\": null\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Test Connection - Health",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{host}}/health",
+          "host": [
+            "{{host}}"
+          ],
+          "path": [
+            "health"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Success",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{host}}/health",
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "health"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "vary",
+              "value": "Origin"
+            },
+            {
+              "key": "date",
+              "value": "Tue, 06 Oct 2026 11:06:36 GMT"
+            },
+            {
+              "key": "content-length",
+              "value": "77"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"success\": true,\n  \"message\": \"Layanan berjalan normal.\",\n  \"data\": {\n    \"status\": \"ok\"\n  }\n}"
+        }
+      ]
+    }
+  ]
+}
