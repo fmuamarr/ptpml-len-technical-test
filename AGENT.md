@@ -1,153 +1,84 @@
-# Dokumentasi Workflow Agentic AI
-> **Project:** Geospatial Entity Management System  
+# Dokumentasi Penggunaan Agentic AI
+
+> **Proyek:** Geospatial Entity Management System  
 > **Kandidat:** Fadillah Muamar (`fmuamar`)  
-> **Evaluasi:** Take-Home Technical Test - Software Developer (PT Len Innovation Technology / PT PML)
+> **Kebutuhan Tes:** Menjelaskan workflow penggunaan Agentic AI pada pengerjaan technical test.
 
 ---
 
-## 1. Pendahuluan
+## 1. Pendekatan & Alat yang Digunakan
 
-Dokumen ini disusun untuk menjelaskan secara transparan sejauh apa dan bagaimana **Agentic AI** dimanfaatkan dalam proses perancangan, pengembangan, pengujian, hingga kontainerisasi sistem ini.
+Pada pengerjaan take-home test ini, saya menggunakan **Google Antigravity Agentic IDE** dengan model **Gemini 3.8 Flash** untuk frontend dan **Claude Sonnet** untuk backend sebagai asisten coding (_pair-programming_).
 
-Alih-alih menggunakan AI hanya sebagai mesin penjawab pertanyaan atau *auto-complete snippet*, pendekatan yang diterapkan di sini adalah **Autonomous Pair-Programming Workflow**. Dalam paradigma ini, AI bertindak sebagai *agentic collaborator* yang beroperasi di bawah batasan arsitektur (*architectural guardrails*) dan instruksi eksplisit dari pengembang (*Human-in-the-Loop*).
-
----
-
-## 2. Lingkungan & Tooling Agentic AI
-
-### 2.1 Agent Environment & Model
-* **IDE & Platform:** Google Antigravity Agentic IDE
-* **Core Foundation Model:** Gemini 3.8 Flash (Thinking / Agentic Reasoning Mode)
-* **Execution Capabilities:** Direct workspace tool execution (file read/write, terminal command execution, background task supervision, git operations, browser subagent testing).
-
-### 2.2 Customizations, Rules & Skills Architecture
-Untuk memastikan AI menghasilkan kode Go dan TypeScript yang idiomatik tanpa halusinasi pola usang, sistem dikonfigurasi dengan *rules* dan *skills* terspesialisasi:
-
-1. **Workspace Rules (`.agent/rules/backend-go.md`):**
-   * Menetapkan standar **Clean Architecture**: `Handler` → `Usecase` → `Repository` → `DB`.
-   * Memastikan router menggunakan `Chi v5` (idiomatik standar `net/http`).
-   * Melarang ORM berat dan mewajibkan `sqlx` dengan *parameterized queries* (`$1, $2`).
-   * Menetapkan envelope respons JSON terstandar: `{"success": bool, "message": string, "data": ...}`.
-   * Menetapkan batasan validasi geografis: Latitude `[-90.0, 90.0]` dan Longitude `[-180.0, 180.0]`.
-
-2. **Specialized Skills Terpasang (`.agents/skills/`):**
-   * `golang-database`: Panduan pola parameterized query, context propagation, pool tuning, dan scanning data.
-   * `golang-pro`: Menjaga performa, penanganan error terstruktur, dan idiomatic Go.
-   * `golang-structs-interfaces`: Pola abstraksi interface Go (*accept interfaces, return structs*).
-
-3. **Model Context Protocol (MCP):**
-   * Digunakan untuk inspeksi database langsung pada PostgreSQL lokal selama fase perancangan skema data.
+Pendekatan yang saya terapkan bukan meminta AI membuat aplikasi secara sekaligus (_one-shot prompt_), melainkan memecah pengerjaan ke dalam tahapan-tahapan kecil dengan batasan teknis (_rules_) yang sudah saya tentukan sejak awal.
 
 ---
 
-## 3. Alur Workflow Pengerjaan (End-to-End Iteration)
+## 2. Aturan & Batasan yang Ditetapkan (Guardrails)
 
-Proses pengerjaan dibagi menjadi 6 fase terstruktur:
+Sebelum penulisan kode dimulai, saya membuat file aturan di `.agent/rules/backend-go.md` untuk membatasi ruang gerak AI agar menghasilkan kode yang konsisten:
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│ 1. Architecture & Guardrails Setup                              │
-│    - Aturan Clean Architecture Go, skema DTO, & aturan validasi │
-└───────────────────────────────┬─────────────────────────────────┘
-                                │
-┌───────────────────────────────▼─────────────────────────────────┐
-│ 2. Database Schema & Migration                                  │
-│    - Tabel `entities`, indeks spasial coords, master table      │
-│      `entity_types` dinamis dengan foreign-key RESTRICT         │
-└───────────────────────────────┬─────────────────────────────────┘
-                                │
-┌───────────────────────────────▼─────────────────────────────────┐
-│ 3. Backend Implementation (Go Clean Architecture)               │
-│    - Repository (sqlx) → Usecase → Handlers (Chi)               │
-│    - Custom Coordinate Validator (pkg/validator)                │
-│    - Unit tests untuk usecase & validator                       │
-└───────────────────────────────┬─────────────────────────────────┘
-                                │
-┌───────────────────────────────▼─────────────────────────────────┐
-│ 4. Frontend Implementation (React 19 + TypeScript + Leaflet)    │
-│    - Leaflet Tactical Map, Custom SVG dynamic markers           │
-│    - Click-to-pick coordinates pada peta                        │
-│    - Form validation (Zod + React Hook Form)                    │
-│    - Drawer Table, filter tipe/status/search, modal CRUD        │
-└───────────────────────────────┬─────────────────────────────────┘
-                                │
-┌───────────────────────────────▼─────────────────────────────────┐
-│ 5. Full-Stack Containerization (Docker Compose & Nginx)         │
-│    - Multi-stage build Go & Vite React                          │
-│    - Nginx reverse-proxy rute `/api` (bebas CORS issue di prod) │
-└───────────────────────────────┬─────────────────────────────────┘
-                                │
-┌───────────────────────────────▼─────────────────────────────────┐
-│ 6. Verification, Testing & Documentation                        │
-│    - `go test ./...`, `npm run build`, cURL & Postman collection│
-│    - Dokumentasi komprehensif (README.md & AGENT.md)            │
-└─────────────────────────────────────────────────────────────────┘
-```
+- **Arsitektur Go:** Wajib menerapkan _Clean Architecture_ dengan pemisahan layer yang jelas: `Handler` -> `Usecase` -> `Repository` -> `DB`.
+- **Router:** Wajib menggunakan `go-chi/chi/v5` (idiom `net/http` standar Go).
+- **Database Access:** Menghindari ORM berat (seperti GORM). Wajib menggunakan `sqlx` dengan parameterized raw SQL (`$1, $2`) agar query transparan dan aman dari SQL injection.
+- **Standar Response:** Format JSON seragam: `{"success": bool, "message": string, "data": ...}`.
+- **Validasi Koordinat:** Latitude dibatasi `[-90.0, 90.0]` dan Longitude `[-180.0, 180.0]`.
 
 ---
 
-### Detail Tiap Fase
+## 3. Alur Kerja Pengerjaan (Step-by-Step)
 
-#### Fase 1: Perencanaan Arsitektur & Guardrails
-* **Tindakan:** Mengidentifikasi seluruh kebutuhan teknis dari lembar tes (Go, React TS, Leaflet, validasi, map CRUD).
-* **Kontribusi AI:** Merekomendasikan struktur monorepo (`backend/` dan `frontend/`) serta membuat file aturan `.agent/rules/backend-go.md` agar konsistensi kode Go terjaga dari awal.
+### Tahap 1: Desain Skema Database & Migrasi
 
-#### Fase 2: Perancangan Skema Database
-* **Tindakan:** Merancang tabel penyimpanan entitas spasial dan relasinya.
-* **Kontribusi AI:** Mengusulkan pemisahan tabel master data `entity_types` (`000002_entity_types.sql`) daripada sekadar hardcoded enum. Tujuannya agar sistem bersifat dinamis: operator dapat menambah kategori objek baru (misal: UAV, Submarine, Satelit) langsung dari aplikasi tanpa redeploy backend.
-* **Integritas Data:** Menambahkan indeks komposit pada `(latitude, longitude)` untuk query spasial yang cepat, serta `ON DELETE RESTRICT` pada Foreign Key.
+- Menentukan skema database PostgreSQL untuk menyimpan entitas dengan kolom koordinat (`latitude`, `longitude`) dan atribut dinamis (`metadata JSONB`).
+- Menambahkan tabel master `entity_types` agar kategori entitas tidak di-hardcode sebagai enum kaku, melainkan dinamis dan memiliki relasi Foreign Key dengan aturan `ON DELETE RESTRICT`.
+- Menambahkan indeks komposit pada `(latitude, longitude)` untuk optimasi query lokasi.
 
-#### Fase 3: Pengembangan Backend Go (Clean Architecture)
-* **Tindakan:** Membangun RESTful API dengan pemisahan dependensi ketat:
-  * `internal/entity`: Domain structs, enum status, DTO request/response, interface repository & usecase.
-  * `internal/repository`: Implementasi database PostgreSQL menggunakan `sqlx` dengan parameterized raw SQL.
-  * `internal/usecase`: Logika bisnis, generasi UUID v4, verifikasi tipe entitas terhadap master table, dan normalisasi metadata JSON.
-  * `internal/handler`: HTTP controller, parsing payload, dan mapping ke *response envelope* standar.
-  * `pkg/validator`: Engine validasi struct berbasis `go-playground/validator/v10` yang dilengkapi custom validator latitude `[-90, 90]` dan longitude `[-180, 180]`.
-* **Testing:** Dibuatkan unit testing otomatis pada layer validator (`pkg/validator/validator_test.go`) dan usecase (`internal/usecase/entity_usecase_test.go`) dengan mock repository.
+### Tahap 2: Backend API (Go)
 
-#### Fase 4: Pengembangan Frontend (React 19 + TypeScript + Leaflet)
-* **Tindakan:** Membangun antarmuka taktis berbasis peta:
-  * **Map Engine:** `react-leaflet` dengan 3 opsi layer (Carto Dark Matter, OSM Standard, Esri World Imagery).
-  * **Tactical Markers:** Marker SVG kustom dengan warna dan ikon dinamis sesuai jenis entitas (mobil, sensor, tower, kapal, drone).
-  * **Interactive Point Picker:** Pengguna dapat mengklik tombol "Pick on Map" pada form modal, lalu mengklik sembarang titik di peta untuk mengisi koordinat secara otomatis.
-  * **Strict Form Validation:** Skema `Zod` yang disinkronkan dengan aturan backend untuk mencegah data tidak valid dikirim ke API.
-  * **Server State & Caching:** Menggunakan `@tanstack/react-query` untuk caching data, auto-refetching saat mutasi berhasil, dan penanganan loading state yang mulus.
-  * **Master Data Manager:** Menambahkan modal pengelolaan tipe entitas langsung dari UI.
+- Menyiapkan repository layer dengan `sqlx` untuk operasi CRUD entitas dan tipe entitas.
+- Menyiapkan usecase layer untuk validasi bisnis (cek tipe ke database master, normalisasi JSON metadata, UUID generator).
+- Membuat custom validator untuk koordinat geografis di package `pkg/validator` menggunakan `go-playground/validator/v10`.
+- Menyusun handler HTTP dengan Chi router, middleware CORS, logger, dan recoverer.
+- Menulis unit test untuk validator koordinat dan usecase logic (`go test -v ./...`).
 
-#### Fase 5: Kontainerisasi Sistem (Docker Compose)
-* **Tindakan:** Menyatukan seluruh ekosistem ke dalam satu konfigurasi `docker-compose.yml`:
-  * Service `postgres:16-alpine` dengan auto-run SQL migrations via `/docker-entrypoint-initdb.d` dan health check.
-  * Service `backend` menggunakan multi-stage build Go (builder `golang:1.26-alpine` → scratch/alpine runner) untuk menghasilkan image yang ramping dan aman.
-  * Service `frontend` menggunakan multi-stage build Node + Nginx alpine. Nginx difungsikan sebagai reverse-proxy: menyajikan static assets React dan mem-proxy request `/api/` langsung ke backend service secara internal.
+### Tahap 3: Frontend (React + TypeScript)
 
-#### Fase 6: Verifikasi & Dokumentasi
-* **Tindakan:** Menjalankan verifikasi sistem:
-  * Menguji seluruh test suite: `go test -v ./...` (semua lulus).
-  * Memvalidasi kompilasi bundle frontend: `npm run build` (lulus tanpa kesalahan tipe TypeScript).
-  * Menguji live containers: `http://localhost:3000` dan `http://localhost:8080/health`.
-  * Menghasilkan Postman collection lengkap dengan contoh request dan response.
-  * Menyusun dokumentasi `README.md` dan `AGENT.md`.
+- Setup project React 19 + TypeScript menggunakan Vite dan Tailwind CSS v4.
+- Integrasi peta menggunakan `react-leaflet` dengan 3 tile provider (Carto Dark, OpenStreetMap, Esri Satellite).
+- Membuat custom tactical marker yang menampilkan ikon dan warna sesuai data tipe entitas.
+- Mengembangkan fitur **Pick Location on Map**: pengguna bisa mengklik titik di peta saat modal form terbuka untuk otomatis mengisi input latitude dan longitude.
+- Integrasi `@tanstack/react-query` untuk handling server state, caching, dan invalidasi data setelah operasi create/update/delete.
+- Validasi form di client-side menggunakan `react-hook-form` dan skema `zod`.
+- Menambahkan drawer table untuk pencarian teks, filter tipe, filter status, dan sorting.
+
+### Tahap 4: Docker & Reverse Proxy
+
+- Menulis `Dockerfile` multi-stage untuk backend Go (menggunakan image alpine agar ukuran image kecil).
+- Menulis `Dockerfile` multi-stage untuk frontend React dengan Nginx alpine.
+- Mengatur konfigurasi Nginx sebagai reverse proxy untuk merutekan request `/api/` langsung ke backend di dalam network Docker.
+- Menyusun `docker-compose.yml` agar seluruh stack (PostgreSQL + migration, backend, frontend) dapat dijalankan hanya dengan 1 perintah `docker compose up --build`.
+
+### Tahap 5: Verifikasi & Testing
+
+- Menguji seluruh endpoint backend menggunakan Postman dan menyimpan request/response ke dalam file collection.
+- Menjalankan `go test ./...` dan build frontend `npm run build` untuk memastikan tidak ada error kompilasi TypeScript.
 
 ---
 
-## 4. Pembagian Peran: Human Developer vs Agentic AI
+## 4. Pembagian Peran: Developer vs AI
 
-| Aspek Pekerjaan | Peran Pengembang (Human Developer) | Peran Agentic AI |
-| :--- | :--- | :--- |
-| **Requirements & Scope** | Mengarahkan cakupan teknis soal tes dan prioritas fitur | Menganalisis kebutuhan dan merancang checklist teknis |
-| **Arsitektur & Desain** | Menentukan Clean Architecture, router Chi, sqlx, dan tema UI | Menghasilkan struktur boilerplate, type definitions, dan DTO |
-| **Kualitas & Guardrails** | Menentukan aturan penamaan, batasan koordinat, dan pola error | Mematuhi aturan di `.agent/rules/` secara konsisten |
-| **Implementasi Kode** | Melakukan review kode setiap iterasi dan meminta revisi | Menulis implementasi Go, TypeScript, CSS, dan SQL |
-| **Pengujian & Validasi** | Menguji UX antarmuka peta, tombol picker, dan skenario edge cases | Mengotomatisasi penulisan unit test dan verifikasi terminal |
-| **Docker & Ops** | Memastikan port tidak bentrok dan alur service compose benar | Menulis Dockerfile multi-stage dan konfigurasi Nginx |
+| Bagian                  | Peran Saya (Developer)                                                                                           | Bantuan AI                                                                                |
+| :---------------------- | :--------------------------------------------------------------------------------------------------------------- | :---------------------------------------------------------------------------------------- |
+| **Arsitektur & Konsep** | Menentukan Clean Architecture, memilih stack (Chi, sqlx, Leaflet, React Query), dan menentukan batasan validasi. | Memberikan saran struktur folder awal dan file scaffolding.                               |
+| **Database**            | Menentukan relasi tabel, indexing koordinat, dan foreign key constraints.                                        | Menulis script SQL migration dan seeder awal.                                             |
+| **Backend Go**          | Mereview alur usecase, memastikan error handling tidak bocor, dan menetapkan standar response envelope.          | Menulis boilerplate struct DTO, query sqlx, custom validator, dan unit test table-driven. |
+| **Frontend React**      | Menentukan interaksi UI (drawer table, modal pick coordinate, tema dark/light).                                  | Menulis komponen React, styling Tailwind, dan skema Zod.                                  |
+| **DevOps / Docker**     | Menentukan konfigurasi port, network, dan flow reverse proxy Nginx.                                              | Menulis Dockerfile multi-stage dan konfigurasi Nginx proxy.                               |
+| **Quality Control**     | Menjalankan test manual, mengecek edge cases koordinat di peta, dan verifikasi Postman.                          | Membantu otomatisasi eksekusi command testing dan formatting code.                        |
 
 ---
 
-## 5. Kesimpulan & Nilai Tambah
+## 5. Ringkasan
 
-Penerapan **Agentic AI** pada pengujian teknis ini memberikan beberapa manfaat nyata:
-
-1. **Efisiensi Pengembangan:** Pembangunan aplikasi *full-stack* yang lengkap (Go backend Clean Architecture + React 19 Leaflet GIS + Docker Compose) dapat diselesaikan secara sistematis dan rapi dalam waktu yang jauh lebih cepat.
-2. **Kualitas & Ketelitian Kode:** Penggunaan aturan arsitektur yang ketat mencegah *spaghetti code*. Validasi ganda (*defense-in-depth*) diterapkan di tingkat Frontend (Zod), Backend (Go Validator), dan Database (SQL Constraints).
-3. **Dokumentasi & Observabilitas:** Setiap perubahan kode tercatat dalam riwayat Git yang modular dengan pesan commit konvensional (*conventional commits*), dilengkapi unit test dan dokumentasi yang jelas.
+Penggunaan Agentic AI pada pengerjaan tes ini sangat membantu dalam mempercepat penulisan kode berulang (_boilerplate_), penyusunan DTO. Namun demikian, penentuan arsitektur sistem, aturan validasi, pemilihan library, dan kendali kualitas kode tetap diarahkan dan direview secara aktif oleh saya sebagai pengembang.
