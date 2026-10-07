@@ -92,6 +92,9 @@ Semua kebutuhan teknis pada soal tes sudah diimplementasikan:
 
 Semua service (PostgreSQL, Go Backend, dan React Frontend + Nginx) sudah dikonfigurasi dalam `docker-compose.yml`.
 
+> **Catatan Environment (.env) pada Docker:**  
+> Untuk menjalankan via Docker Compose, untuk menjalankan proyek ini **tidak perlu** membuat file `.env` manual karena variabel environment (`PORT`, `DATABASE_URL`) sudah disuntikkan secara otomatis melalui `docker-compose.yml`.
+
 1. Pastikan Docker dan Docker Compose sudah terpasang.
 2. Jalankan perintah berikut di root folder proyek:
    ```bash
@@ -120,7 +123,7 @@ Jalankan PostgreSQL lokal di port `5432` dengan database `geo_entities`. Anda ju
 docker compose up -d postgres
 ```
 
-_(File skema otomatis terbaca dari folder `backend/migrations/`)_.
+_(File skema otomatis terbaca dan dimigrasi dari folder `backend/migrations/`)_.
 
 #### 2. Backend (Go)
 
@@ -128,12 +131,16 @@ _(File skema otomatis terbaca dari folder `backend/migrations/`)_.
    ```bash
    cd backend
    ```
-2. Pastikan file `.env` sudah sesuai:
+2. Salin template environment dari `.env.example`:
+   ```bash
+   cp .env.example .env
+   ```
+   Isi default `.env`:
    ```env
    PORT=8080
    DATABASE_URL=postgres://postgres:lentechtest@localhost:5432/geo_entities?sslmode=disable
    ```
-3. Jalankan aplikasi:
+3. Jalankan server backend:
    ```bash
    go run cmd/api/main.go
    ```
@@ -146,7 +153,11 @@ _(File skema otomatis terbaca dari folder `backend/migrations/`)_.
    cd frontend
    npm install
    ```
-2. Pastikan file `.env` mengarah ke backend:
+2. Salin template environment dari `.env.example`:
+   ```bash
+   cp .env.example .env
+   ```
+   Isi file `.env` mengarah ke backend:
    ```env
    VITE_API_BASE_URL=http://localhost:8080
    ```
